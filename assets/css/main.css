@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "NotoKufiArabic";
+  src: url("/assets/fonts/NotoKufiArabic.ttf");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  direction: rtl;
+}
+
+body {
+  background-color: #f9f9f9;
+  font-family: "NotoKufiArabic";
+  font-size: 15px;
+}
+
+/* container */
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* header */
+.header {
+  /* header container */
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* header container logo */
+    .logo {
+      & h1 {
+        & a {
+          display: block;
+          font-size: 32px;
+          font-weight: 900;
+          text-decoration: none;
+          color: #333;
+          margin-top: 10px;
+          position: relative;
+          & span {
+            font-weight: 600;
+            font-size: 16px;
+            position: absolute;
+            top: -10px;
+          }
+        }
+      }
+    }
+    /* header container avatar */
+    .profile {
+      & a {
+        .avatar {
+          width: 50px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
