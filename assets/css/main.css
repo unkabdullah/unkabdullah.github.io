@@ -1,125 +1,200 @@
+/* [ Fonts ] */
 @font-face {
-  font-family: "NotoKufiArabic";
-  src: url("/assets/fonts/NotoKufiArabic.ttf");
+  font-family: "DG Baysan";
+  src: url(../fonts/DG-Baysan-Regular.ttf);
+}
+@font-face {
+  font-family: "DG Kufi";
+  src: url(../fonts/DG-Kufi.ttf);
 }
 
+/* [ Global Rules ] */
 :root {
-  /* colors */
-  --mainColor: #242424;
-  --subColor1: #f9f9f9;
-  --subColor2: #a9aaab;
-  --subColor3: #707070;
-  --subColor4: #333333;
-  --subColor5: #1a1a1a;
+  --royalBlue: #5271ff;
+  --black-333: #333333;
+  --gray-ddd: #dddddd;
+  --gray-ef: #efefef;
+  --white: #ffffff;
 }
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  text-decoration: none;
+  font-family: "DG Baysan";
 }
-
+html {
+  direction: rtl;
+}
 body {
-  background-color: var(--mainColor);
-  font-family: "NotoKufiArabic";
-  font-size: 15px;
+  height: 100svh;
+  background-color: var(--gray-ef);
+  font-family: "DG Baysan";
+  color: var(--black-333);
 }
-
-/* container */
+section {
+  position: relative;
+  height: 100svh;
+}
+.fa-circle-arrow-up {
+  cursor: pointer;
+  position: fixed;
+  z-index: 999;
+  bottom: 25px;
+  right: 25px;
+  font-size: 32px;
+  color: var(--black-333);
+  display: none;
+}
+.fa-angles-down {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 26px;
+  color: var(--black-333);
+}
+.sec-title {
+  color: var(--royalBlue);
+  font-size: 38px;
+  font-family: "DG Kufi";
+  font-weight: normal;
+}
 .container {
   width: 100%;
   max-width: 1140px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 25px;
 }
 
-/* header */
-.header {
-  width: 100%;
-  .headerContent {
-    position: relative;
-    width: 100%;
-    height: 90px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .profile {
-      width: 40px;
-      border-radius: 50%;
-      outline: 2px solid var(--subColor1);
-    }
-    .siteName {
-      direction: rtl;
-      display: flex;
-      justify-content: center;
-      flex-flow: column wrap;
-      color: var(--subColor1);
-      & span:nth-child(1) {
-        font-size: 14px;
-        align-self: flex-start;
-        margin-bottom: -15px;
-      }
-      & span:nth-child(2) {
-        font-size: 24px;
-      }
-    }
-  }
-}
-@media (max-width: 720px) {
+/* [ Main CSS ] */
+.abdsy {
+  /* [ Header ] */
   .header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    background-color: var(--subColor5);
-    box-shadow: 0 0 3px;
-    .headerContent {
-      height: 70px;
-    }
-  }
-}
-
-/* miniNavbar */
-.miniNavbar {
-  display: none;
-}
-@media (max-width: 720px) {
-  .miniNavbar {
-    display: block;
-    background-color: var(--subColor5);
-    border-radius: 25px 25px 0 0;
-    box-shadow: 0 0 3px;
-    padding: 0 10px;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    .miniNavbarContent {
-      width: 100%;
-      height: 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      .navLink {
-        text-decoration: none;
-        display: flex;
-        height: 50px;
+    .header-content {
+      .logo {
+        position: absolute;
+        top: 25px;
+        left: 25px;
         width: 50px;
-        justify-content: center;
+      }
+      .utilities {
+        position: fixed;
+        top: 0;
+        right: 0;
+        transform: translateX(249px);
+        z-index: 99;
+        height: 100svh;
+        width: 100%;
+        max-width: 250px;
+        background-color: var(--black-333);
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
         align-items: center;
-        color: var(--subColor1);
-        .navIcon {
-          font-size: 24px;
+        flex-flow: column wrap;
+        color: var(--white);
+        .my-links {
+          direction: ltr;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-flow: column wrap;
+          gap: 10px;
+          & h3 {
+            font-family: "DG Kufi";
+            font-weight: normal;
+            margin-bottom: -7px;
+          }
+          .links {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            flex-flow: row wrap;
+            & a {
+              height: 35px;
+              display: flex;
+              padding: 0 10px;
+              border-radius: 50px;
+              gap: 5px;
+              align-items: center;
+              color: var(--black-333);
+              background-color: var(--gray-ef);
+            }
+          }
+        }
+        .btnToggle {
+          position: fixed;
+          right: 250px;
+          top: 25px;
+          width: 50px;
+          height: 50px;
+          border: none;
+          background-color: var(--black-333);
+          border-radius: 50px 0 0 50px;
+          cursor: pointer;
+          font-size: 18px;
+          color: var(--white);
         }
       }
-      .active {
-        background-color: var(--subColor1);
-        color: var(--mainColor);
-        border-radius: 50%;
-        margin-bottom: 50px;
-        height: 70px;
-        width: 70px;
-        .navIcon {
-          font-size: 32px;
+    }
+  }
+  /* [ Landing ] */
+  .landing {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    .landing-content {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      .my-name {
+        font-size: 50px;
+        font-weight: normal;
+        font-family: "DG Kufi";
+        margin-bottom: -25px;
+      }
+      .my-job {
+        font-size: 32px;
+        color: var(--royalBlue);
+      }
+      .logo {
+        width: 300px;
+        position: absolute;
+        opacity: 0.05;
+      }
+    }
+  }
+  /* [ About ] */
+  .about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    .about-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: column;
+      .my-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        text-align: center;
+        gap: 20px;
+        .profile {
+          width: 250px;
+        }
+        .desc {
+          width: 350px;
+          font-size: 18px;
+          opacity: 0.9;
         }
       }
     }
