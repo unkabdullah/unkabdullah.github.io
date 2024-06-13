@@ -33,10 +33,6 @@ body {
   font-family: "DG Baysan";
   color: var(--black-333);
 }
-section {
-  position: relative;
-  height: 100svh;
-}
 .fa-circle-arrow-up {
   cursor: pointer;
   position: fixed;
@@ -69,81 +65,23 @@ section {
 }
 
 /* [ Main CSS ] */
-.abdsy {
+.unkabdullah {
   /* [ Header ] */
   .header {
     .header-content {
+      width: 100%;
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       .logo {
-        position: absolute;
-        top: 25px;
-        left: 25px;
         width: 50px;
-      }
-      .utilities {
-        position: fixed;
-        top: 0;
-        right: 0;
-        transform: translateX(249px);
-        z-index: 99;
-        height: 100svh;
-        width: 100%;
-        max-width: 250px;
-        background-color: var(--black-333);
-        padding: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-flow: column wrap;
-        color: var(--white);
-        .my-links {
-          direction: ltr;
-          width: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-flow: column wrap;
-          gap: 10px;
-          & h3 {
-            font-family: "DG Kufi";
-            font-weight: normal;
-            margin-bottom: -7px;
-          }
-          .links {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            justify-content: center;
-            flex-flow: row wrap;
-            & a {
-              height: 35px;
-              display: flex;
-              padding: 0 10px;
-              border-radius: 50px;
-              gap: 5px;
-              align-items: center;
-              color: var(--black-333);
-              background-color: var(--gray-ef);
-            }
-          }
-        }
-        .btnToggle {
-          position: fixed;
-          right: 250px;
-          top: 25px;
-          width: 50px;
-          height: 50px;
-          border: none;
-          background-color: var(--black-333);
-          border-radius: 50px 0 0 50px;
-          cursor: pointer;
-          font-size: 18px;
-          color: var(--white);
-        }
       }
     }
   }
   /* [ Landing ] */
   .landing {
+    height: calc(100svh - 70px);
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -153,6 +91,9 @@ section {
       flex-flow: column;
       justify-content: center;
       align-items: center;
+      .avatar {
+        width: 300px;
+      }
       .my-name {
         font-size: 50px;
         font-weight: normal;
@@ -162,40 +103,6 @@ section {
       .my-job {
         font-size: 32px;
         color: var(--royalBlue);
-      }
-      .logo {
-        width: 300px;
-        position: absolute;
-        opacity: 0.05;
-      }
-    }
-  }
-  /* [ About ] */
-  .about {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column;
-    .about-content {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-flow: column;
-      .my-info {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-flow: column;
-        text-align: center;
-        gap: 20px;
-        .profile {
-          width: 250px;
-        }
-        .desc {
-          width: 350px;
-          font-size: 18px;
-          opacity: 0.9;
-        }
       }
     }
   }
